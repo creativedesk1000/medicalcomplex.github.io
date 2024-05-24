@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="css/prescription.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+   <title>Medicine Prescription Form </title>
+</head>
+<body>
+    <!-- <div class="logo"></div> <img src="images/icon/ar-removebg-preview.png" alt="logo"> -->
+ 
+    <div class="container">
+       
+        <header>Prescription
+        </header>
+
+        <form action="#">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Personal Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Patient  Name</label>
+                            <input type="text" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Patient Age</label>
+                            <input type="age" placeholder="Enter Age" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="text" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Mobile Number</label>
+                            <input type="number" placeholder="Enter mobile number" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Gender</label>
+                            <select required>
+                                <option disabled selected>Select gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field message-box" id="inp">
+                            <label>Symptoms</label>
+                            <!-- <input type="text" placeholder="Enter Patients Symptoms" required> -->
+                            <textarea name="prescription" id="prescription" cols="30" rows="20" placeholder="Enter Patients Symptoms"></textarea>
+                        </div>
+                        <div class="input-field message-box">
+                            <label>Diagnosis</label>
+                            <!-- <input type="text" placeholder="Enter Patients Symptoms" required> -->
+                            <textarea name="prescription" id="prescription" cols="30" rows="10" placeholder="Enter Patients Symptoms"></textarea>
+                        </div>
+                        <div class="input-field message-box">
+                            <label>Prescription</label>
+                            <!-- <input type="text" placeholder="Enter Patients Symptoms" required> -->
+                            <textarea name="prescription" id="prescription" cols="30" rows="10" placeholder="Enter Patients Symptoms"></textarea>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+               
+                    <div  class="buttons">
+                        <div  class="backBtn" onclick="window.location.href ='sidebar.html'">
+                            <i class="uil uil-navigator"></i>
+                            <span class="btnText" >Back</span>
+                        </div>
+                        
+                        <button class="submit" onclick="saveDataInCloud()">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-navigator"></i>
+                          </button>
+                    </div>
+                </div> 
+            </div>
+        </form>
+    </div>
+<!--  -->
+<script>
+    // Function to save data in the cloud
+    function saveDataInCloud() {
+      // Code to save data in the cloud goes here
+  
+      // Display popup
+      alert("Data saved successfully!");
+  
+      // Refresh the page
+      location.reload();
+    }
+  </script>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="javascript/record.js">
+ <link rel="stylesheet" href="css/record.css">
+    <title>Operations Records</title>
+    <style>
+     
+    </style>
+  </head>
+  <body>
+    <h1>Operation Record Saving Table</h1>
+    <div class="button-container">
+      <a href="#" class="button" id="addRecordBtn">Add New Record</a>
+      <a href="#" class="button button-danger" id="deleteRecordBtn">Delete Record</a>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Doctor Name</th>
+          <th>Patient Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Patient Issue</th>
+          <th>Date of Operation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Dr. John Smith</td>
+          <td>John Doe</td>
+          <td>35</td>
+          <td>Male</td>
+          <td>Fever</td>
+          <td>2024-03-30</td>
+        </tr>
+        <tr>
+          <td>Dr. Jane Johnson</td>
+          <td>Jane Smith</td>
+          <td>42</td>
+          <td>Female</td>
+          <td>Cough</td>
+          <td>2024-03-31</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="button-container">
+      <a href="#" class="button" id="backBtn">Back</a>
+      <a href="#" class="button" id="closeBtn">Close</a>
+    </div>
+    <script>
+      document.getElementById('addRecordBtn').addEventListener('click', function () {
+        var doctorName = prompt("Enter Doctor Name:");
+        var patientName = prompt("Enter Patient Name:");
+        var age = prompt("Enter Age:");
+        var gender = prompt("Enter Gender:");
+        var patientIssue = prompt("Enter Patient Issue:");
+        var dateOfOperation = prompt("Enter Date of Operation (YYYY-MM-DD):");
+  
+        var table = document.querySelector("table tbody");
+        var newRow = table.insertRow();
+  
+        var doctorNameCell = newRow.insertCell();
+        doctorNameCell.textContent = doctorName;
+  
+        var patientNameCell = newRow.insertCell();
+        patientNameCell.textContent = patientName;
+  
+        var ageCell = newRow.insertCell();
+        ageCell.textContent = age;
+  
+        var genderCell = newRow.insertCell();
+        genderCell.textContent = gender;
+  
+        var patientIssueCell = newRow.insertCell();
+        patientIssueCell.textContent = patientIssue;
+  
+        var dateOfOperationCell = newRow.insertCell();
+        dateOfOperationCell.textContent = dateOfOperation;
+      });
+  
+      document.getElementById('deleteRecordBtn').addEventListener('click', function () {
+        var patientNameToDelete = prompt("Enter the Patient Name of the record to delete:");
+        var table = document.querySelector("table tbody");
+  
+        for (var i = 0; i < table.rows.length; i++) {
+          var patientNameCell = table.rows[i].cells[1];
+          if (patientNameCell.textContent === patientNameToDelete) {
+            table.deleteRow(i);
+            break;
+          }
+        }
+      });
+  
+      document.getElementById('backBtn').addEventListener('click', function () {
+  // Add your logic for navigating back here
+  window.location.href = 'sidebar.html';
+});
+  
+document.getElementById('closeBtn').addEventListener('click', function () {
+  // Add your logic for closing the page here
+  window.close();
+});
+    </script>
+</body>
+</html>

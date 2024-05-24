@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Signup Form</title>
+    <link rel="stylesheet" href="css/signup.css" />
+  </head>
+  <body>
+    <div  class="buttons">
+      <div  class="backBtn" onclick="window.location.href ='index.html'">
+          <i class="uil uil-navigator"></i>
+          <span class="btnText" >Back</span>
+      </div>
+    <section class="wrapper">
+      <div class="form signup">
+        <header>Signup</header>
+        <form action="#" onsubmit="showPopup(); return false;">
+          <input type="text" placeholder="Full name" required />
+          <input type="email" name="mail-outline" placeholder="Email address" required />
+          <input type="password" name="lock-closed-outline" placeholder="Password" required /> 
+          <div class="checkbox">
+            <input type="checkbox" id="signupCheck" />
+            <label for="signupCheck">I accept all terms & conditions</label>
+          </div>
+          <input type="submit" value="Signup" />
+        </form>
+      </div>
+
+      <div class="form login">
+        <header>Login</header>
+        <form action="#sidebar.html" onclick="saveDataInCloud()">
+          <input type="email" name="mail-outline" placeholder="Email address" required />
+          <input type="password" name="lock-closed-outline" placeholder="Password" required />
+          <a href="#">Forgot password?</a>
+          <input  type="submit" value="Login"  />
+        </form>
+      </div>
+
+      <script>
+      const wrapper = document.querySelector(".wrapper");
+const signupHeader = document.querySelector(".signup header");
+const loginHeader = document.querySelector(".login header");
+
+loginHeader.addEventListener("click", () => {
+  wrapper.classList.add("active");
+});
+
+signupHeader.addEventListener("click", () => {
+  wrapper.classList.remove("active");
+});
+
+function showPopup() {
+  alert("Your account has been created");
+  wrapper.classList.add("active"); // Open the login panel after clicking "OK"
+}
+
+// Function to save data in the cloud
+function saveDataInCloud() {
+  // Code to save data in the cloud goes here
+
+  // Display popup
+  alert("Welcome to Your Profile");
+
+  // Open the sidebar.html page
+  window.location.href = "sidebar.html";
+}
+      </script>
+    </section>
+  </body>
+</html>
