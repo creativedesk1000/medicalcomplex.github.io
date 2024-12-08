@@ -112,7 +112,7 @@ body{
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.button input[type="button"]:hover{
+.button input[type="submit"]:hover{
   background: #210e57;
 }
 .right-side .backBtn{
